@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSmoothText } from "@/hooks/useSmoothText";
 
@@ -11,7 +11,7 @@ const services = [
     title: "HVAC Maintenance Services",
     description:
       "Maintenance, troubleshooting, and repair of HVAC systems including split ACs, packaged units, AHUs, FCUs, ventilation systems, ducting, chilled water systems, and heat exchangers to ensure reliable and efficient operation.",
-    image: "/images/01.png",
+    image: "/images/01.webp",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const services = [
     title: "Electric Motor & Pump Services",
     description:
       "Troubleshooting, rewinding, refurbishment, and repair of LV / HT AC & DC motors and pumps including industrial motors, irrigation pumps, chilled water pumps, exhaust fan motors, and fire pump motors.",
-    image: "/images/02.png",
+    image: "/images/02.webp",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ const services = [
     title: "Laser Alignment Services",
     description:
       "Precision laser alignment services for motors, pumps, and rotating equipment to improve performance, reduce vibration, minimize wear, and enhance overall system efficiency.",
-    image: "/images/03.png",
+    image: "/images/03.webp",
   },
   {
     number: "04",
@@ -35,7 +35,7 @@ const services = [
     title: "VFD Services",
     description:
       "Installation, commissioning, and maintenance of Variable Frequency Drives (VFDs) to optimize motor performance, improve energy efficiency, and ensure smooth and controlled operation.",
-    image: "/images/04.png",
+    image: "/images/04.webp",
   },
   {
     number: "05",
@@ -43,13 +43,21 @@ const services = [
     title: "Electrical Panel Works",
     description:
       "Design, installation, modification, and maintenance of electrical control panels including MCC panels, distribution panels, synchronization panels, PLC panels, and VFD panels.",
-    image: "/images/05.png",
+    image: "/images/05.webp",
   },
 ];
 
 export default function ServicesSection() {
   const [active, setActive] = useState(0);
   useSmoothText();
+
+  /* ✅ PRELOAD ALL SERVICE IMAGES */
+  useEffect(() => {
+    services.forEach((service) => {
+      const img = new window.Image();
+      img.src = service.image;
+    });
+  }, []);
 
   return (
     <section id="services" className="bg-white py-20 lg:py-28">
@@ -98,14 +106,14 @@ export default function ServicesSection() {
 
           {/* CENTER — IMAGE */}
           <div className="flex justify-center">
-            <div className="relative h-[360px] lg:h-[580px] w-[260px] lg:w-[380px] overflow-hidden bg-brand-navy p-4 lg:p-6">
+            <div className="relative h-[360px] lg:h-[580px] w-[260px] lg:w-[380px] overflow-hidden bg-brand-navy p-4 lg:p-6 transition-opacity duration-300">
               
               <Image
                 src={services[active].image}
                 alt={services[active].title}
                 fill
+                sizes="(max-width: 768px) 260px, 380px"
                 className="object-cover"
-                priority
               />
 
               <div className="absolute inset-0 bg-brand-navy/25" />

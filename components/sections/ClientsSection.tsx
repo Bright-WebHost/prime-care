@@ -3,12 +3,12 @@
 import Image from "next/image";
 
 const clients = [
-  { name: "Darwish Interserve", logo: "/clients/darwish.jpg" },
-  { name: "EMCO", logo: "/clients/emco.jpeg" },
-  { name: "EFS Facilities Services", logo: "/clients/efs.png" },
-  { name: "Waseef", logo: "/clients/waseef.jpg" },
-  { name: "The Maintainers", logo: "/clients/maintainers.png" },
-  { name: "Linc", logo: "/clients/linc.jpeg" },
+  { name: "Darwish Interserve", logo: "/clients/darwish.webp" },
+  { name: "EMCO", logo: "/clients/emco.webp" },
+  { name: "EFS Facilities Services", logo: "/clients/efs.webp" },
+  { name: "Waseef", logo: "/clients/waseef.webp" },
+  { name: "The Maintainers", logo: "/clients/maintainers.webp" },
+  { name: "Linc", logo: "/clients/linc.webp" },
 ];
 
 export default function ClientsSection() {

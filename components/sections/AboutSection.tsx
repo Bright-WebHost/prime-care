@@ -38,7 +38,7 @@ export default function AboutSection() {
           <div className="relative mt-6 h-[200px] overflow-hidden rounded-lg bg-brand-navy">
 
             <Image
-              src="/images/about1.png"  // <-- add your image here
+              src="/images/about1.webp"  // <-- add your image here
               alt="Prime Care Trading & Services technical maintenance work in Qatar"
               fill
               className="object-cover"
@@ -57,7 +57,7 @@ export default function AboutSection() {
           <div className="absolute -bottom-5 -left-5 h-28 w-28 bg-white/90" />
 
           <Image
-            src="/images/about.png"
+            src="/images/about.webp"
             alt="Prime Care technical team at work"
             fill
             priority

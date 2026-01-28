@@ -11,7 +11,7 @@ const services = [
     title: "HVAC Maintenance Services",
     description:
       "Maintenance, troubleshooting, and repair of HVAC systems including split ACs, packaged units, AHUs, FCUs, ventilation systems, ducting, chilled water systems, and heat exchangers to ensure reliable and efficient operation.",
-    image: "/images/01.jpg",
+    image: "/images/01.png",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const services = [
     title: "Electric Motor & Pump Services",
     description:
       "Troubleshooting, rewinding, refurbishment, and repair of LV / HT AC & DC motors and pumps including industrial motors, irrigation pumps, chilled water pumps, exhaust fan motors, and fire pump motors.",
-    image: "/images/02.jpg",
+    image: "/images/02.png",
   },
   {
     number: "03",
@@ -35,7 +35,7 @@ const services = [
     title: "VFD Services",
     description:
       "Installation, commissioning, and maintenance of Variable Frequency Drives (VFDs) to optimize motor performance, improve energy efficiency, and ensure smooth and controlled operation.",
-    image: "/images/04.jpg",
+    image: "/images/04.png",
   },
   {
     number: "05",
@@ -43,41 +43,40 @@ const services = [
     title: "Electrical Panel Works",
     description:
       "Design, installation, modification, and maintenance of electrical control panels including MCC panels, distribution panels, synchronization panels, PLC panels, and VFD panels.",
-    image: "/images/05.jpg",
+    image: "/images/05.png",
   },
 ];
 
 export default function ServicesSection() {
   const [active, setActive] = useState(0);
-
   useSmoothText();
 
   return (
-    <section id="services" className="bg-white py-28">
+    <section id="services" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-[1300px] px-6">
 
         {/* HEADER */}
-        <div className="mb-20 max-w-4xl">
-          <p className="smooth-text text-sm uppercase tracking-[0.35em] text-brand-gray">
+        <div className="mb-14 lg:mb-20 max-w-4xl">
+          <p className="smooth-text text-xs lg:text-sm uppercase tracking-[0.35em] text-brand-gray">
             Services
           </p>
-          <h2 className="smooth-text mt-4 text-5xl font-heading font-bold text-brand-navy leading-tight">
+          <h2 className="smooth-text mt-3 lg:mt-4 text-3xl lg:text-5xl font-heading font-bold text-brand-navy leading-tight">
             Engineered services<br />built for reliability
           </h2>
         </div>
 
         {/* MAIN GRID */}
-        <div className="grid items-center gap-16 lg:grid-cols-[280px_420px_1fr]">
+        <div className="grid gap-12 lg:gap-16 lg:grid-cols-[280px_420px_1fr]">
 
           {/* LEFT — SERVICE BARS */}
-          <div className="space-y-5">
+          <div className="space-y-3 lg:space-y-5">
             {services.map((s, i) => {
               const isActive = i === active;
               return (
                 <button
                   key={s.title}
                   onClick={() => setActive(i)}
-                  className={`relative w-full px-7 py-7 text-left transition-all duration-300
+                  className={`relative w-full px-5 py-4 lg:px-7 lg:py-7 text-left transition-all duration-300
                     ${
                       isActive
                         ? "bg-brand-navy text-white"
@@ -89,7 +88,7 @@ export default function ServicesSection() {
                       isActive ? "bg-brand-yellow" : "bg-transparent"
                     }`}
                   />
-                  <span className="block text-lg font-semibold">
+                  <span className="block text-base lg:text-lg font-semibold">
                     {s.short}
                   </span>
                 </button>
@@ -98,8 +97,8 @@ export default function ServicesSection() {
           </div>
 
           {/* CENTER — IMAGE */}
-          <div className="relative flex justify-center">
-            <div className="relative h-[580px] w-[380px] overflow-hidden bg-brand-navy p-6">
+          <div className="flex justify-center">
+            <div className="relative h-[360px] lg:h-[580px] w-[260px] lg:w-[380px] overflow-hidden bg-brand-navy p-4 lg:p-6">
               
               <Image
                 src={services[active].image}
@@ -109,27 +108,25 @@ export default function ServicesSection() {
                 priority
               />
 
-              {/* Dark overlay for consistency */}
               <div className="absolute inset-0 bg-brand-navy/25" />
 
-              {/* BIG NUMBER */}
-              <div className="absolute bottom-5 right-5 text-7xl font-heading font-bold text-white/25">
+              <div className="absolute bottom-4 right-4 lg:bottom-5 lg:right-5 text-5xl lg:text-7xl font-heading font-bold text-white/25">
                 {services[active].number}
               </div>
             </div>
           </div>
 
           {/* RIGHT — TEXT */}
-          <div className="flex max-w-[640px] flex-col justify-center space-y-7">
+          <div className="flex max-w-[640px] flex-col justify-center space-y-5 lg:space-y-7">
             <p className="smooth-text text-xs uppercase tracking-[0.4em] text-brand-gray">
               About this service
             </p>
 
-            <h3 className="smooth-text text-[36px] font-heading font-bold text-brand-navy leading-snug">
+            <h3 className="smooth-text text-2xl lg:text-[36px] font-heading font-bold text-brand-navy leading-snug">
               {services[active].title}
             </h3>
 
-            <p className="smooth-text text-[19px] leading-relaxed text-brand-gray">
+            <p className="smooth-text text-base lg:text-[19px] leading-relaxed text-brand-gray">
               {services[active].description}
             </p>
 

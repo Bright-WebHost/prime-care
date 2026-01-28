@@ -13,7 +13,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false); // ✅ mobile menu state
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -29,10 +29,15 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      {/* NAV BAR */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
-        {/* LOGO */}
-        <Link href="/" className="flex items-center">
+
+        {/* LOGO WITH LIGHT GLOW (NO CARD) */}
+        <Link href="/" className="relative flex items-center">
+          {/* glow layer */}
+          {!scrolled && (
+            <span className="absolute inset-0 -z-10 rounded-full blur-xl bg-white/40" />
+          )}
+
           <Image
             src="/logo.png"
             alt="Prime Care Trading & Services"
@@ -40,14 +45,14 @@ export default function Navbar() {
             height={38}
             priority
             className={`object-contain transition-all duration-300 ${
-              scrolled
-                ? "filter-none"
-                : "invert brightness-200 drop-shadow-[0_2px_12px_rgba(255,255,255,0.45)]"
+              !scrolled
+                ? "drop-shadow-[0_4px_18px_rgba(255,255,255,0.45)]"
+                : "drop-shadow-none"
             }`}
           />
         </Link>
 
-        {/* DESKTOP NAV (UNCHANGED) */}
+        {/* DESKTOP NAV */}
         <nav
           className={`hidden items-center gap-10 transition md:flex ${
             scrolled ? "text-brand-navy" : "text-white"
@@ -65,7 +70,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* DESKTOP CTA (UNCHANGED) */}
+        {/* CTA */}
         <Link
           href="#contact"
           className="hidden rounded-full bg-brand-yellow px-6 py-2 text-[14px] font-semibold text-brand-navy shadow-soft transition hover:bg-brand-yellow/90 md:inline-flex"
@@ -73,27 +78,20 @@ export default function Navbar() {
           Call / Contact
         </Link>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
           className={`md:hidden transition ${
             scrolled ? "text-brand-navy" : "text-white"
           }`}
-          aria-label="Toggle menu"
         >
-          <svg
-            width="26"
-            height="26"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
+          <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M4 7h18M4 13h18M4 19h18" />
           </svg>
         </button>
       </div>
 
-      {/* ✅ MOBILE MENU */}
+      {/* MOBILE MENU */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
           open ? "max-h-[360px] opacity-100" : "max-h-0 opacity-0"
@@ -113,7 +111,6 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* MOBILE CTA */}
           <Link
             href="#contact"
             onClick={() => setOpen(false)}

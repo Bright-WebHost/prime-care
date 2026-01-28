@@ -48,7 +48,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <ParallaxImage
-          imageSrc="/images/hero1.avif"
+          imageSrc="/images/hero.png"
           hero
           plain
           height="100vh"

@@ -47,7 +47,7 @@ export default function WhyChooseSection() {
         {/* LEFT IMAGE */}
         <div className="relative h-[420px] overflow-hidden rounded-xl bg-brand-navy">
           <Image
-            src="/images/why.jpg"
+            src="/images/why.png"
             alt="Prime Care technical expertise"
             fill
             priority

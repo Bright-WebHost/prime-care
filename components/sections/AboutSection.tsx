@@ -9,21 +9,18 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="bg-brand-light py-16 lg:py-20"
+      className="bg-brand-light pt-10 pb-16 lg:pt-14 lg:pb-20"
     >
-      <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
 
         {/* ================= LEFT COLUMN ================= */}
-        <div className="space-y-6">
-          <p className="smooth-text text-xs uppercase tracking-[0.3em] text-brand-gray">
-            Company Profile
-          </p>
+        <div className="space-y-5">
 
           <h2 className="smooth-text max-w-xl text-4xl font-heading font-extrabold leading-tight text-brand-navy">
-            Trusted technical partner<br />in Qatar
+            Trusted Technical Partner<br />in Qatar
           </h2>
 
-          <div className="smooth-text h-[3px] w-16 bg-brand-yellow" />
+          <div className="smooth-text h-[3px] w-14 bg-brand-yellow" />
 
           <p className="smooth-text max-w-xl text-base leading-relaxed text-brand-gray">
             Prime Care Trading & Services delivers high-quality maintenance,
@@ -37,45 +34,36 @@ export default function AboutSection() {
             facilities with precision-driven service.
           </p>
 
-          {/* ================= AUTO-PLAY VIDEO ================= */}
-          <div className="relative mt-8 h-[220px] overflow-hidden rounded-lg bg-black">
+          {/* ================= IMAGE (REPLACED VIDEO) ================= */}
+          <div className="relative mt-6 h-[200px] overflow-hidden rounded-lg bg-brand-navy">
 
-            <video
-              src="/videos/about.mp4"   // /public/videos/about.mp4
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="absolute inset-0 h-full w-full object-cover"
+            <Image
+              src="/images/about1.png"  // <-- add your image here
+              alt="Prime Care Trading & Services technical maintenance work in Qatar"
+              fill
+              className="object-cover"
             />
 
-            {/* Subtle overlay for readability */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/45 to-transparent" />
-
-            <div className="absolute bottom-4 left-4 text-xs uppercase tracking-wider text-white/80">
-              Company Overview
-            </div>
+            {/* Subtle overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
           </div>
         </div>
 
         {/* ================= RIGHT COLUMN ================= */}
-        <div className="relative h-[460px] overflow-hidden rounded-lg bg-brand-navy">
+        <div className="relative h-[420px] overflow-hidden rounded-lg bg-brand-navy">
 
           {/* Accent blocks */}
-          <div className="absolute -top-6 -right-6 h-28 w-28 bg-brand-yellow/90" />
-          <div className="absolute -bottom-6 -left-6 h-32 w-32 bg-white/90" />
+          <div className="absolute -top-5 -right-5 h-24 w-24 bg-brand-yellow/90" />
+          <div className="absolute -bottom-5 -left-5 h-28 w-28 bg-white/90" />
 
-          {/* IMAGE */}
           <Image
-            src="/images/about.jpg"   // /public/images/about.jpg
+            src="/images/about.png"
             alt="Prime Care technical team at work"
             fill
             priority
             className="object-cover"
           />
 
-          {/* Consistent dark overlay */}
           <div className="absolute inset-0 bg-brand-navy/25" />
         </div>
 

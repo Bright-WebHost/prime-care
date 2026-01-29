@@ -1,23 +1,21 @@
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-white py-28">
-
-      {/* MOVING HEADING */}
-      <div className="relative mb-20 overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap text-[clamp(3rem,8vw,7rem)] font-extrabold uppercase tracking-wide">
-          <span className="mx-6 text-brand-yellow">GET</span>
-          <span className="mx-6 text-brand-navy">IN TOUCH</span>
-
-          <span className="mx-6 text-brand-yellow">GET</span>
-          <span className="mx-6 text-brand-navy">IN TOUCH</span>
-
-          <span className="mx-6 text-brand-yellow">GET</span>
-          <span className="mx-6 text-brand-navy">IN TOUCH</span>
-        </div>
-      </div>
-
-      {/* CONTACT INFO */}
+    <section id="contact" className="relative overflow-hidden bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-6">
+
+        {/* HEADER */}
+        <div className="mb-16 lg:mb-24 text-center">
+          <p className="text-xs lg:text-sm uppercase tracking-[0.35em] text-brand-gray mb-4">
+            Contact Us
+          </p>
+          <h2 className="text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-tight">
+            <span className="text-brand-navy">Get in </span>
+            <span className="text-brand-yellow">Touch</span>
+          </h2>
+          <div className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-brand-yellow via-brand-navy to-brand-yellow"></div>
+        </div>
+
+        {/* CONTACT INFO */}
         <div className="grid gap-12 text-center md:grid-cols-3">
 
           {/* PHONE */}

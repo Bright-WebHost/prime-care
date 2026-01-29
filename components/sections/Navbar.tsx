@@ -31,13 +31,8 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
 
-        {/* LOGO WITH LIGHT GLOW (NO CARD) */}
+        {/* LOGO */}
         <Link href="/" className="relative flex items-center">
-          {/* glow layer */}
-          {!scrolled && (
-            <span className="absolute inset-0 -z-10 rounded-full blur-xl bg-white/40" />
-          )}
-
           <Image
             src="/logo.png"
             alt="Prime Care Trading & Services"
@@ -46,7 +41,7 @@ export default function Navbar() {
             priority
             className={`object-contain transition-all duration-300 ${
               !scrolled
-                ? "drop-shadow-[0_4px_18px_rgba(255,255,255,0.45)]"
+                ? "brightness-0 invert drop-shadow-[0_4px_18px_rgba(255,255,255,0.45)]"
                 : "drop-shadow-none"
             }`}
           />
